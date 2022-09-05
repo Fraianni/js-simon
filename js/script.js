@@ -6,24 +6,48 @@
 
 //const idTimeout = setTimeout(myFunction, 5000);
 
-let counter = 0;
-let array = [];
-const clock = setInterval(random_number(array), 2000);
 
 
+function ask_number() {
+    let userNumber = parseInt(prompt('scegli numero'));
+    if (isNaN(userNumber)) {
+        userNumber = ask_number();
 
-
+    }
+    return userNumber;
+}
 function random_number(array) {
-    counter++;
-    if (counter <= 5) {
+    for (let i = 0; i < 5; i++) {
         const random = Math.floor(Math.random() * 100);
         array.push(random);
         let html = document.getElementById('par').innerHTML += random + ' ';
     }
-    else {
-        clearInterval(clock);
-    }
 
 }
 
+function time_function() {
+    alert('30 secondi trascorsi, i numeri verranno cancellati');
+    let paragrafo = document.getElementById('par').innerHTML = '';
+    let user_counter = 0;
+    while (user_counter < 5) {
+        user_numbers.push(ask_number())
+        user_counter++;
+    }
+}
+
+
+
+let counter = 0;
+let array = [];
+random_number(array);
 console.log(array);
+
+let passing_seconds = 0;
+
+const timer = setTimeout(time_function, 5000);
+
+let user_numbers = [];
+
+
+
+
