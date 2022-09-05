@@ -28,6 +28,10 @@ function random_number(random_array) {
 function time_function() {
     alert('30 secondi trascorsi, i numeri verranno cancellati');
     let paragrafo = document.getElementById('par').innerHTML = '';
+
+}
+
+function result_function() {
     let user_counter = 0;
     while (user_counter < 5) {
         user_numbers.push(ask_number())
@@ -54,7 +58,9 @@ console.log(random_array);
 
 let passing_seconds = 0;
 
-const timer = setTimeout(time_function, 5000);
+const timer = setTimeout(time_function, 30000);
+const result = setTimeout(result_function, 31000);
+
 
 let user_numbers = [];
 let right_numbers = [];
