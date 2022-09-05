@@ -16,10 +16,10 @@ function ask_number() {
     }
     return userNumber;
 }
-function random_number(array) {
+function random_number(random_array) {
     for (let i = 0; i < 5; i++) {
         const random = Math.floor(Math.random() * 100);
-        array.push(random);
+        random_array.push(random);
         let html = document.getElementById('par').innerHTML += random + ' ';
     }
 
@@ -33,20 +33,32 @@ function time_function() {
         user_numbers.push(ask_number())
         user_counter++;
     }
+
+    for (let i = 0; i < 5; i++) {
+        if (random_array[i] === user_numbers[i])
+            right_numbers.push(random_array[i]);
+    }
+
+    console.log('Hai azzeccato', right_numbers.length, 'numeri:');
+    for (let i = 0; i < right_numbers.length; i++) {
+        console.log(right_numbers[i]);
+    }
 }
 
 
 
 let counter = 0;
-let array = [];
-random_number(array);
-console.log(array);
+let random_array = [];
+random_number(random_array);
+console.log(random_array);
 
 let passing_seconds = 0;
 
 const timer = setTimeout(time_function, 5000);
 
 let user_numbers = [];
+let right_numbers = [];
+
 
 
 
