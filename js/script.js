@@ -43,9 +43,12 @@ function result_function() {
             right_numbers.push(random_array[i]);
     }
 
+    let result_document = document.getElementById('result');
+    result_document.innerHTML += 'Hai azzeccato ' + right_numbers.length + ' numeri:';
     console.log('Hai azzeccato', right_numbers.length, 'numeri:');
     for (let i = 0; i < right_numbers.length; i++) {
         console.log(right_numbers[i]);
+        result_document.innerHTML += right_numbers;
     }
 }
 
